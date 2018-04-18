@@ -22,4 +22,4 @@
 > export GOPATH=$PATH:$GOROOT/bin
 
 ## 检查`Go`是否安装成功
-> $ go --version
+> $ go version
