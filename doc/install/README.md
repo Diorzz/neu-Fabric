@@ -32,8 +32,4 @@
 在源码目录下`/example/e2e_cil`中启动脚本
 > bash network_setup.sh up
 
-
-
-
-
-
+当你成功启动并且出现以下界面时，证明你的环境安装成功了：
