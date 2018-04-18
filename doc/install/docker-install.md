@@ -58,3 +58,9 @@ sub   4096R/F273FCD8 2017-02-22
 
 - 检查`docker-compose`是否安装成功
 > $ docker-compose --version
+
+如果没法使用`apt`安装`docker-compose`，那么先安装`python-pip`:
+> $ apt-get install python-pip
+
+再安装`docker-compose`:
+> $ pip install docker-compose
