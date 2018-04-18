@@ -18,5 +18,8 @@
 - 设置全局`PATH`
 > $ export PATH=$PATH:$GOPATH/bin
 
+- 设置`GOPATH`
+> export GOPATH=$PATH:$GOROOT/bin
+
 ## 检查`Go`是否安装成功
 > $ go --version
