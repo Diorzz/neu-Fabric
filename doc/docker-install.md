@@ -5,12 +5,12 @@
 - `docker-compose`
 
 ## 卸载旧版本
-如果系统中已经安装过旧版本的`ubuntu`的系统，请先检查并卸载旧版本，命令代码如下：
+如果系统中已经安装过旧版本的`docker`，请先检查并卸载旧版本，命令代码如下：
  > $ sudo apt-get remove docker docker-engine docker.io
 
-如果系统中没有安装过`Docker`则会提示`Package 'docker' is not installed, so not removed`那么你就可以执行下一步了。
+如果系统中没有安装过`docker`则会提示`Package 'docker' is not installed, so not removed`那么你就可以执行下一步了。
 
-## 配置Docker仓库（可选）
+## 配置`docker`仓库（可选）
 - 更新`apt`软件包
 > $ sudo apt-get update
 
@@ -21,7 +21,7 @@
     curl \
     software-properties-common
     
-- 添加`Docker`官方 GPG 秘钥
+- 添加`docker`官方 GPG 秘钥
 > $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 - 确定你有如下指纹信息
