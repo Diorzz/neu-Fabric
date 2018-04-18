@@ -1,6 +1,8 @@
 # Docker Install（Ubuntu下Docker安装）
 ***
-本教程只针对`ubuntu`系统下的`Docker`安装，其他系统安装教程请访问`https://docs.docker.com/install/`
+本教程只针对`ubuntu`系统下的`Docker`安装，其他系统安装教程请访问`https://docs.docker.com/install/`。执行完本教程命令后您的电脑需要安装以下软件
+- `docker`
+- `docker-compose`
 
 ## 卸载旧版本
 如果系统中已经安装过旧版本的`ubuntu`的系统，请先检查并卸载旧版本，命令代码如下：
