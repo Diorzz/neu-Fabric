@@ -7,5 +7,5 @@
 > $ sudo apt-get install npm
 
 ## 检查安装
-> node -v
-> npm -v
+>$ node -v
+$ npm -v
