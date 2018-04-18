@@ -27,6 +27,13 @@
 在`scripts/`目录下有一个`bootstrap.sh`的启动文件，他会为你自动下载所有`Fabric`需要的`docker`镜像，下载需要时间，请耐心等待。
 > $ ./bootstrap.sh
 
+- 启动测试网络
+
+在源码目录下`/example/e2e_cil`中启动脚本
+> bash network_setup.sh up
+
+
+
 
 
 
