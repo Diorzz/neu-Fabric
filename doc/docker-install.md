@@ -8,7 +8,7 @@
 
 如果系统中没有安装过`Docker`则会提示`Package 'docker' is not installed, so not removed`那么你就可以执行下一步了。
 
-## 配置Docker仓库
+## 配置Docker仓库（可选）
 - 更新`apt`软件包
 > $ sudo apt-get update
 
@@ -25,7 +25,7 @@
 - 确定你有如下指纹信息
 > $ sudo apt-key fingerprint 0EBFCD88
 
-输入上述命令后查找是否有如下数据项：
+输入上述命令后命令行会显示一些信息，确定查找是否有如下数据项：
 > pub   4096R/0EBFCD88 2017-02-22
       Key fingerprint = 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
 uid                  Docker Release (CE deb) <docker@docker.com>
@@ -37,9 +37,22 @@ sub   4096R/F273FCD8 2017-02-22
    $(lsb_release -cs) \
    stable"
 
-## 安装Docker
+## 安装`docker`
 - 更新`apt`包索引
 > $ sudo apt-get update
 
 - 安装docker-ce
 > $ sudo apt-get install docker-ce
+
+- 检查`Docker`是否安装成功
+> $ docker --version
+
+## 安装`docker-compose`
+- 更新`apt`包索引
+> $ sudo apt-get update
+
+- 安装docker-ce
+> $ sudo apt-get install docker-compose
+
+- 检查`docker-compose`是否安装成功
+> $ docker-compose --version
