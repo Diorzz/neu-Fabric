@@ -7,3 +7,5 @@
 - `go`
 - `node.js`
 - `python`
+
+对于以上包的安装方法，在当前目录下`xx-install.md`文件下有详细说明
