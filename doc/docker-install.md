@@ -41,7 +41,7 @@ sub   4096R/F273FCD8 2017-02-22
 - 更新`apt`包索引
 > $ sudo apt-get update
 
-- 安装docker-ce
+- 安装`docker-ce`
 > $ sudo apt-get install docker-ce
 
 - 检查`Docker`是否安装成功
@@ -51,7 +51,7 @@ sub   4096R/F273FCD8 2017-02-22
 - 更新`apt`包索引
 > $ sudo apt-get update
 
-- 安装docker-ce
+- 安装`docker-compose`
 > $ sudo apt-get install docker-compose
 
 - 检查`docker-compose`是否安装成功
