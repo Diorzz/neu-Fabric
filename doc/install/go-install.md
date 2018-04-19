@@ -6,7 +6,7 @@
 > https://golang.org/doc/install?download=go1.10.1.linux-amd64.tar.gz
 
 - 使用命令行下载（推荐）
-> $ wget https://storage.googleapis.com/golang/go1.10.1.linux-amd64.tar.gz
+> $ curl -O https://storage.googleapis.com/golang/go1.10.1.linux-amd64.tar.gz
 
 ## 解压压缩包到`/usr/local`目录下
 > $ tar -C /usr/local -xzf go1.10.1.linux-amd64.tar.gz
