@@ -12,14 +12,21 @@
 > $ tar -C /usr/local -xzf go1.10.1.linux-amd64.tar.gz
 
 ## 设置`Go`的环境变量
-- 设置`GOPATH`
-> $ export GOPATH=/usr/local/go/
+- 安装`vim`
+> $ apt-get install vim
 
-- 设置全局`PATH`
-> $ export PATH=$PATH:$GOPATH/bin
+- 修改`/etc/profile`文件
+> $ vim /etc/profile
 
-- 设置`GOPATH`
-> export GOPATH=$PATH:$GOROOT/bin
+- 修改
+把下面两行命令写到文件的末尾
+> export PATH=$PATH:/usr/local/go/bin
+
+> export GOPATH=/opt/gopath
+
+保存后执行下面的命令：
+> source profile
+
 
 ## 检查`Go`是否安装成功
 > $ go version
