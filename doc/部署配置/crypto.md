@@ -7,7 +7,7 @@
 `Fabric`提供了一个方便的工具：`cryptogen`来生成这些配置文件。`cryptogen`工具在源码目录`./release/darwin-amd64/bin`或`./release/linux-amd64/bin`下。`cryptogen`工具会根据配置文件来生成相关证书和秘钥。默认配置文件名为`crypto-config.yaml`，我们可以在源码目录`./examples/e2e_cli/`下找到示例文件。在我们的当前目录`config`目录下存放了示例的配置文件，可以查看。
 
 ## 使用
-当配置好配置文件`crypto-config.yaml`后就可以使用`crytogen`工具生成证书和密钥了，首先进入`$FABRCI_ROOT/release/;inux-amd64/bin`目录下执行：
+当配置好配置文件`crypto-config.yaml`后就可以使用`crytogen`工具生成证书和密钥了，首先进入`$FABRCI_ROOT/release/inux-amd64/bin`目录下执行：
 ```shell
 $ ./cryptogen generate --config <inpath> --output <outpath>
 ```
