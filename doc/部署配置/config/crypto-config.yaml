@@ -1,96 +1,45 @@
-# Copyright IBM Corp. All Rights Reserved.
-#
-# SPDX-License-Identifier: Apache-2.0
-#
+# neu-Fabric 项目组所有
+# author: zz
+# time: 2018-04-30
+# 该配置文件描述了fabrci的网络拓扑和组织结构关系
+# 采用yaml语法描述，整体分为两大类：OrdererOrgs和PeerOrgs
+# OrdererOrgs描述了order组织结构，PeerOrgs描述了peer组织结构
+# 下面是示例文件
 
-#Fabrci通过证书和秘钥管理身份，Fabric提供了cryptogen命令工具管理组织结构和证书
-# ---------------------------------------------------------------------------
-# "OrdererOrgs" - Definition of organizations managing orderer nodes
-# “OrdererOrgs” - 用来定义构成orderer集群节点所属组织
-# ---------------------------------------------------------------------------
 OrdererOrgs:
-  # ---------------------------------------------------------------------------
-  # Orderer
-  # ---------------------------------------------------------------------------
-  - Name: Orderer
-    Domain: example.com
-    CA:
-        Country: US
-        Province: California
-        Locality: San Francisco
-    # ---------------------------------------------------------------------------
-    # "Specs" - See PeerOrgs below for complete description
-    # ---------------------------------------------------------------------------
+  - Name: Orderer # Name为组织的名称
+    Domain: example.com # Domain为阻止的域名
+    CA: # CA为阻止的CA信息
+      Country: CH
+      Province: LiaoNing
+      Locality: ShenYang
+    # Specs字段指定了这个组织下面的节点，每个节点包含两个字段：Hostname和CommonName，其中HostName是必须的
     Specs:
-      - Hostname: orderer
-# ---------------------------------------------------------------------------
-# "PeerOrgs" - Definition of organizations managing peer nodes
-# ---------------------------------------------------------------------------
+      - Hostname: foo
+        CommonName: foo.example.com
+      - Hostname: bar
+        CommonName: bar.example.com
+
+# 
 PeerOrgs:
-  # ---------------------------------------------------------------------------
-  # Org1
-  # ---------------------------------------------------------------------------
-  - Name: Org1
+  - Name: org1
     Domain: org1.example.com
-    EnableNodeOUs: true
     CA:
-        Country: US
-        Province: California
-        Locality: San Francisco
-    # ---------------------------------------------------------------------------
-    # "Specs"
-    # ---------------------------------------------------------------------------
-    # Uncomment this section to enable the explicit definition of hosts in your
-    # configuration.  Most users will want to use Template, below
-    #
-    # Specs is an array of Spec entries.  Each Spec entry consists of two fields:
-    #   - Hostname:   (Required) The desired hostname, sans the domain.
-    #   - CommonName: (Optional) Specifies the template or explicit override for
-    #                 the CN.  By default, this is the template:
-    #
-    #                              "{{.Hostname}}.{{.Domain}}"
-    #
-    #                 which obtains its values from the Spec.Hostname and
-    #                 Org.Domain, respectively.
-    # ---------------------------------------------------------------------------
-    # Specs:
-    #   - Hostname: foo # implicitly "foo.org1.example.com"
-    #     CommonName: foo27.org5.example.com # overrides Hostname-based FQDN set above
-    #   - Hostname: bar
-    #   - Hostname: baz
-    # ---------------------------------------------------------------------------
-    # "Template"
-    # ---------------------------------------------------------------------------
-    # Allows for the definition of 1 or more hosts that are created sequentially
-    # from a template. By default, this looks like "peer%d" from 0 to Count-1.
-    # You may override the number of nodes (Count), the starting index (Start)
-    # or the template used to construct the name (Hostname).
-    #
-    # Note: Template and Specs are not mutually exclusive.  You may define both
-    # sections and the aggregate nodes will be created for you.  Take care with
-    # name collisions
-    # ---------------------------------------------------------------------------
+      Country: CH
+      Province: LiaoNing
+      Locality: ShenYang
+    # Template使用模板自动生成制定个数的peer
     Template:
-      Count: 2
-      # Start: 5
-      # Hostname: {{.Prefix}}{{.Index}} # default
-    # ---------------------------------------------------------------------------
-    # "Users"
-    # ---------------------------------------------------------------------------
-    # Count: The number of user accounts _in addition_ to Admin
-    # ---------------------------------------------------------------------------
+      Count: 5
+    # Users生成指定个数的普通用户
     Users:
-      Count: 1
-  # ---------------------------------------------------------------------------
-  # Org2: See "Org1" for full specification
-  # ---------------------------------------------------------------------------
-  - Name: Org2
+      Count: 2
+  - Name: org2
     Domain: org2.example.com
-    EnableNodeOUs: true
     CA:
-        Country: US
-        Province: California
-        Locality: San Francisco
+      Country: CH
+      Province: LiaoNing
+      Locality: ShenYang
     Template:
       Count: 2
     Users:
